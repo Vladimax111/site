@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <ul>
+        <!-- Список всех пользователей -->
+        {% for user in users %}
+        <li>
+            <a href="/user/{{ user.id }}">{{ user.username }} ({{ user.age }} years old)</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <!-- Если передан один пользователь -->
+    {% if user %}
+    <h2>User Details</h2>
+    <p>ID: {{ user.id }}</p>
+    <p>Name: {{ user.username }}</p>
+    <p>Age: {{ user.age }}</p>
+    {% endif %}
+</body>
+</html>
